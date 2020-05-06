@@ -26,6 +26,14 @@ public class EmployeeController {
 		return new Response(employee.getId() + " inserted ", Boolean.TRUE);
 	}
 	
+	@PostMapping("/ashish")
+	public Response addEmployeeAshish(@RequestBody Employee employee){
+		repository.save(employee);
+		return new Response(employee.getId() + " inserted ", Boolean.TRUE);
+	}
+	
+	
+	
 	@GetMapping("/getEmployees")
 	public Response addAllEmployee(){
 		List<Employee> employees = repository.findAll();
